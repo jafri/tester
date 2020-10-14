@@ -3,15 +3,15 @@ const assert = require('assert');
 const TOKEN_WASM_PATH = `${__dirname}/../../c++_tests/system_wasms/eosio.token.wasm`;
 const TOKEN_ABI_PATH = `${__dirname}/../../c++_tests/system_wasms/eosio.token.abi`;
 
-const ATOM_WASM_PATH = `${__dirname}/../../atom/atom.wasm`;
-const ATOM_ABI_PATH = `${__dirname}/../../atom/atom.abi`;
+const SWAP_WASM_PATH = `${__dirname}/../../swap/swap.wasm`;
+const SWAP_ABI_PATH = `${__dirname}/../../swap/swap.abi`;
 
-describe("Atom", function (eoslime) {
+describe("Swap", function (eoslime) {
 
     // Increase mocha(testing framework) time, otherwise tests fails
     this.timeout(15000);
 
-    let atomContract;
+    let swapContract;
     let tokenContract;
     let tokensIssuer;
     let tokensHolder;
@@ -29,11 +29,11 @@ describe("Atom", function (eoslime) {
         tokenContract = await eoslime.Contract.deploy(TOKEN_WASM_PATH, TOKEN_ABI_PATH);
         await tokenContract.actions.create([tokensIssuer.name, TOTAL_SUPPLY]);
 
-        atomContract = await eoslime.Contract.deploy(ATOM_WASM_PATH, ATOM_ABI_PATH);
+        swapContract = await eoslime.Contract.deploy(SWAP_WASM_PATH, SWAP_ABI_PATH);
     });
 
     it("Should print account name in transaction console (hi)", async () => {
-        const { processed: { action_traces }} = await atomContract.actions.hi([tokensIssuer.name]);
+        const { processed: { action_traces }} = await swapContract.actions.hi([tokensIssuer.name]);
 
         assert.equal(action_traces.length, 1, "Incorrect number of action traces");
         assert.equal(action_traces[0].console, tokensIssuer.name, "Incorrect printed name");

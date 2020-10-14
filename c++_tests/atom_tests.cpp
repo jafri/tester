@@ -31,7 +31,7 @@ public:
       create_accounts({
          N(eosio.token),
          N(proton),
-         N(atom)
+         N(swap)
       });
       produce_blocks( 2 );
 
@@ -49,13 +49,13 @@ public:
       abi_ser.set_abi(token_abi, abi_serializer_max_time);
       produce_blocks();
 
-      // Deploy user contract (atom)
-      set_code( N(atom), contracts::atom_wasm() );
-      set_abi( N(atom), contracts::atom_abi().data() );
+      // Deploy user contract (swap)
+      set_code( N(swap), contracts::swap_wasm() );
+      set_abi( N(swap), contracts::swap_abi().data() );
       produce_blocks();
 
-      // Add atom ABI to ABI serializer
-      const auto& wasm_accnt = control->db().get<account_object, by_name>( N(atom) );
+      // Add swap ABI to ABI serializer
+      const auto& wasm_accnt = control->db().get<account_object, by_name>( N(swap) );
       abi_def wasm_abi;
       BOOST_REQUIRE_EQUAL(abi_serializer::to_abi(wasm_accnt.abi, wasm_abi), true);
       abi_ser.set_abi(wasm_abi, abi_serializer_max_time);
@@ -101,7 +101,7 @@ public:
 BOOST_AUTO_TEST_SUITE(proton_test)
    BOOST_FIXTURE_TEST_CASE( test_case1, proton_tester ) try {
       // Transfer token to contract to deposit
-      transfer(N(proton), N(atom), asset::from_string("200.0000 XPR"), "Hello");
+      transfer(N(proton), N(swap), asset::from_string("200.0000 XPR"), "Hello");
 
       // Check condition
       BOOST_REQUIRE_EQUAL( "ok", "ok" );

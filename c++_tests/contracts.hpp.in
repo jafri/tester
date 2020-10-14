@@ -9,8 +9,8 @@ struct contracts {
    static std::vector<uint8_t> token_wasm() { return read_wasm("${CMAKE_BINARY_DIR}/system_wasms/eosio.token.wasm"); }
    static std::vector<char>    token_abi() { return read_abi("${CMAKE_BINARY_DIR}/system_wasms/eosio.token.abi"); }
 
-   static std::vector<uint8_t> atom_wasm() { return read_wasm("${CMAKE_BINARY_DIR}/../atom/atom.wasm"); }
-   static std::vector<char>    atom_abi() { return read_abi("${CMAKE_BINARY_DIR}/../atom/atom.abi"); }
+   static std::vector<uint8_t> swap_wasm() { return read_wasm("${CMAKE_BINARY_DIR}/../swap/swap.wasm"); }
+   static std::vector<char>    swap_abi() { return read_abi("${CMAKE_BINARY_DIR}/../swap/swap.abi"); }
 
    struct util {
 

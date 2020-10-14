@@ -9,8 +9,8 @@ struct contracts {
    static std::vector<uint8_t> token_wasm() { return read_wasm("/Users/jafri/proton-boilerplate/tests/system_wasms/eosio.token.wasm"); }
    static std::vector<char>    token_abi() { return read_abi("/Users/jafri/proton-boilerplate/tests/system_wasms/eosio.token.abi"); }
 
-   static std::vector<uint8_t> atom_wasm() { return read_wasm("/Users/jafri/proton-boilerplate/tests/../atom/atom.wasm"); }
-   static std::vector<char>    atom_abi() { return read_abi("/Users/jafri/proton-boilerplate/tests/../atom/atom.abi"); }
+   static std::vector<uint8_t> swap_wasm() { return read_wasm("/Users/jafri/proton-boilerplate/tests/../swap/swap.wasm"); }
+   static std::vector<char>    swap_abi() { return read_abi("/Users/jafri/proton-boilerplate/tests/../swap/swap.abi"); }
 
    struct util {
 

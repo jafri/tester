@@ -1,0 +1,336 @@
+{
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT ",
+    "version": "eosio::abi/1.1",
+    "types": [],
+    "structs": [
+        {
+            "name": "globall",
+            "base": "",
+            "fields": [
+                {
+                    "name": "exchange_fee_for_protocol",
+                    "type": "uint16"
+                },
+                {
+                    "name": "add_liquidity_fee_for_protocol",
+                    "type": "uint16"
+                },
+                {
+                    "name": "remove_liquidity_fee_for_protocol",
+                    "type": "uint16"
+                },
+                {
+                    "name": "last_proposal_id",
+                    "type": "uint16"
+                },
+                {
+                    "name": "exchange_fee_default",
+                    "type": "uint16"
+                },
+                {
+                    "name": "add_liquidity_fee_default",
+                    "type": "uint16"
+                },
+                {
+                    "name": "remove_liquidity_fee_default",
+                    "type": "uint16"
+                },
+                {
+                    "name": "spare1",
+                    "type": "uint64"
+                },
+                {
+                    "name": "spare2",
+                    "type": "uint64"
+                },
+                {
+                    "name": "spare3",
+                    "type": "uint64"
+                },
+                {
+                    "name": "spare4",
+                    "type": "uint64"
+                },
+                {
+                    "name": "spare5",
+                    "type": "uint64"
+                },
+                {
+                    "name": "spare6",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "pool",
+            "base": "pool_base",
+            "fields": [
+                {
+                    "name": "reserved",
+                    "type": "uint16"
+                }
+            ]
+        },
+        {
+            "name": "pool_base",
+            "base": "",
+            "fields": [
+                {
+                    "name": "lt_symbol",
+                    "type": "symbol"
+                },
+                {
+                    "name": "creator",
+                    "type": "name"
+                },
+                {
+                    "name": "memo",
+                    "type": "string"
+                },
+                {
+                    "name": "pool1",
+                    "type": "asset"
+                },
+                {
+                    "name": "pool2",
+                    "type": "asset"
+                },
+                {
+                    "name": "hash",
+                    "type": "uint128"
+                },
+                {
+                    "name": "fee",
+                    "type": "pool_fee"
+                }
+            ]
+        },
+        {
+            "name": "pool_fee",
+            "base": "",
+            "fields": [
+                {
+                    "name": "exchange_fee",
+                    "type": "uint16"
+                },
+                {
+                    "name": "add_liquidity_fee",
+                    "type": "uint16"
+                },
+                {
+                    "name": "remove_liquidity_fee",
+                    "type": "uint16"
+                }
+            ]
+        },
+        {
+            "name": "proposal",
+            "base": "pool_base",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "account",
+            "base": "",
+            "fields": [
+                {
+                    "name": "balance",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "name": "close",
+            "base": "",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "symbol",
+                    "type": "symbol"
+                }
+            ]
+        },
+        {
+            "name": "create",
+            "base": "",
+            "fields": [
+                {
+                    "name": "issuer",
+                    "type": "name"
+                },
+                {
+                    "name": "maximum_supply",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "name": "currency_stats",
+            "base": "",
+            "fields": [
+                {
+                    "name": "supply",
+                    "type": "asset"
+                },
+                {
+                    "name": "max_supply",
+                    "type": "asset"
+                },
+                {
+                    "name": "issuer",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "issue",
+            "base": "",
+            "fields": [
+                {
+                    "name": "to",
+                    "type": "name"
+                },
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                },
+                {
+                    "name": "memo",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "open",
+            "base": "",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "symbol",
+                    "type": "symbol"
+                },
+                {
+                    "name": "ram_payer",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "retire",
+            "base": "",
+            "fields": [
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                },
+                {
+                    "name": "memo",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "transfer",
+            "base": "",
+            "fields": [
+                {
+                    "name": "from",
+                    "type": "name"
+                },
+                {
+                    "name": "to",
+                    "type": "name"
+                },
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                },
+                {
+                    "name": "memo",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name": "close",
+            "type": "close",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "create",
+            "type": "create",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "issue",
+            "type": "issue",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "open",
+            "type": "open",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "retire",
+            "type": "retire",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "transfer",
+            "type": "transfer",
+            "ricardian_contract": ""
+        }
+    ],
+    "tables": [
+        {
+            "name": "globall",
+            "type": "globall",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "pools",
+            "type": "pool",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "proposals",
+            "type": "proposal",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "accounts",
+            "type": "account",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "stat",
+            "type": "currency_stats",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        }
+    ],
+    "ricardian_clauses": [],
+    "variants": []
+}
